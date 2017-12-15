@@ -1,0 +1,10 @@
+<h1>Select a Genre and a Subgenre</h1><br>
+<% Genre.distinct(:title).pluck(:id).each do |category| %>
+	<% x=Genre.where(id: category) %>
+	<h2> <u><%= x[0].title %></u> </h2>
+	<% a= Subgenre.where(Genre_id: category).select(:title).map(&:title).uniq %>
+	<% for items in a %>
+	<h4> <%= items %> </h4>
+	<%= link_to "New Quiz", play_path(:subgenre => items, :genre => x[0].title, :restore => 0), class: "btn btn-primary btn-lg" %>
+	<% end %>
+<% end %>	

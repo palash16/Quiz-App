@@ -1,0 +1,2 @@
+class Restore < ApplicationRecord
+end

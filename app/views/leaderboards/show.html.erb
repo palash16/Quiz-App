@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subgenre:</strong>
+  <%= @leaderboard.Subgenre %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @leaderboard.User %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @leaderboard.score %>
+</p>
+
+<%= link_to 'Edit', edit_leaderboard_path(@leaderboard) %> |
+<%= link_to 'Back', leaderboards_path %>

@@ -1,0 +1,14 @@
+<h1><u><%= params[:genre] %><% params[:subgenre] %></u></h1>
+<h1><%= $c[$x].title %></h1>
+<%= form_for(@test, url: play_path(:subgenre => params[:subgenre] ,:genre => params[:genre], :restore => 0)) do |f| %>
+<%= f.check_box :op1 %>
+<h3><%= $c[$x].op1 %></h3><br> 
+<%= f.check_box :op2 %>
+<h3><%= $c[$x].op2 %></h3><br> 
+<%= f.check_box :op3 %>
+<h3><%= $c[$x].op3 %></h3><br> 
+<%= f.check_box :op4 %>
+<h3><%= $c[$x].op4 %></h3><br>
+<%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %> 
+
